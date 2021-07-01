@@ -1,7 +1,8 @@
 <template>
-  <div class="home">
-    <HelloWorld/>
-  </div>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
 </template>
 
 <script lang="ts">
@@ -15,3 +16,12 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+div{
+  float: left;
+  width: 1.875rem;
+  height: 1.875rem;
+  background: green;
+}
+</style>

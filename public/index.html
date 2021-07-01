@@ -6,6 +6,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+      // 1 rem = 50px
+      (function(doc,win,designWidth){
+
+        const html = doc.documentElement;
+        const clientWidth = html.clientWidth;
+
+        function Refresh(){
+          if(clientWidth > 768){
+            html.style.fontSize = "100px";
+          }else{
+            // html.style.fontSize = 16 * (clientWidth / 375) + 'px';
+            html.style.fontSize = 100 * (clientWidth / designWidth) + 'px';
+          }
+        }
+        win.addEventListener('DOMContentLoaded',Refresh,false)
+      })(document,window,750);
+    </script>
+    <style>
+      *{
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <noscript>
